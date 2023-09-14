@@ -5,7 +5,7 @@
  *
  * @c: input for digit
  *
- * Return: 1 if c id digit otherwise 0
+ * Return: 1 if c is digit otherwise 0
  */
 
 int _isdigit(int c)
@@ -15,4 +15,3 @@ int _isdigit(int c)
 	else
 		return (0);
 }
-
