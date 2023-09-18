@@ -1,20 +1,19 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * main - Entry point
+ * _strlen - returns the length of a string
  *
- * Return: always 0 (success)
+ * @str: input parameter
+ *
+ * Return: length of a string
  */
 
-int main(void)
+size_t _strlen(const char *str)
 {
-	char *str;
-	int len;
+	size_t length = 0;
 
-	str = "my first strlen";
-	len = _strlen(str);
-
-	printf("%d\n", len);
-
-	return (0);
+	while (*str++)
+		length++;
+	return (length);
 }
