@@ -16,7 +16,7 @@ int check_num(char *str)
 {
 	unsigned int i;
 
-	count = 0;
+	i = 0;
 
 	while (i < strlen(str))
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
 {
 
-	int ci;
+	int i;
 	int str_to_int;
 	int sum = 0;
 
