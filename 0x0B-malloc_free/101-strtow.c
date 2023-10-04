@@ -68,7 +68,7 @@ char **strtow(char *str)
 					*tmp++ = str[start++];
 				*tmp = '\0';
 				arr[j] = tmp - c;
-				k++;
+				j++;
 				c = 0;
 			}
 		}
