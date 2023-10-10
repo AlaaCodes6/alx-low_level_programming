@@ -3,28 +3,27 @@
 
 /**
  * _strlen - returns the length of a string
+ * @s: input
  *
- * @s: string
- *
- * Description: function that returns length
- *
- * Returns: length of the string
+ * Return: the length of the string
  */
 
-int _strlen(const char *s)
+int _strlen(char *s)
 {
-	int len = 0;
+	int i;
 
-	while (s[len] != '\0')
+	i = 0;
+
+	while (s[i] != '\0')
 	{
-		len++;
+		i++;
 	}
 
-	return (len);
+	return (i);
 }
 
 /**
- * *_strcpy - copies a string to another
+ * *_strcpy - copies a string
  *
  * @dest: input
  * @src: input
@@ -53,13 +52,14 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
- * new_dog - function that creates a new dog
+ * new_dog - creates a new dog
  *
  * @name: name input
  * @age: age input
  * @owner: owner input
  *
- * Return: new dog if Success, NULL if the function fails
+ * Return: pointer to the new dog if success, NULL
+ *	if the function fails
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
