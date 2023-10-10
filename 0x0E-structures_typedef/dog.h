@@ -19,6 +19,8 @@ struct dog
 
 /**
  * dog_t - Define a new type
+ *
+ * Description: dog_t as a new name for the type struct dog
  */
 
 typedef struct dog dog_t;
