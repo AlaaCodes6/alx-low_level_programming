@@ -1,10 +1,12 @@
 #include <stdio.h>
 
-void first(void) __attribute__ ((constructor));
+void printer(void) __attribute__ ((constructor));
 
 /**
  * printer - prints a sentence before the main
  *	function is executed
+ *
+ * Returns : Nothing
  */
 
 
