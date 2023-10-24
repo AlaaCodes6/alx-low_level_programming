@@ -2,44 +2,46 @@
 
 /**
  * delete_nodeint_at_index - deletes the node at index
- * of a linked list.
+ * of a linked list
+ *
  * @head: head of a list.
  * @index: index of the list where the node is
- * deleted.
+ * deleted
  *
  * Return: 1 if it succeeded, -1 if it failed.
  */
+
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i;
-	listint_t *prev;
+	listint_t *j;
 	listint_t *next;
 
-	prev = *head;
+	j = *head;
 
 	if (index != 0)
 	{
-		for (i = 0; i < index - 1 && prev != NULL; i++)
+		for (i = 0; i < index - 1 && j != NULL; i++)
 		{
-			prev = prev->next;
+			j = j->next;
 		}
 	}
 
-	if (prev == NULL || (prev->next == NULL && index != 0))
+	if (j == NULL || (j->next == NULL && index != 0))
 	{
 		return (-1);
 	}
 
-	next = prev->next;
+	next = j->next;
 
 	if (index != 0)
 	{
-		prev->next = next->next;
+		j->next = next->next;
 		free(next);
 	}
 	else
 	{
-		free(prev);
+		free(j);
 		*head = next;
 	}
 
