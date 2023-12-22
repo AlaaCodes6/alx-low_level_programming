@@ -5,12 +5,11 @@
  *
  * @ht: pointer to the hash table
  * @key: key of the hash
- * Return: the value associated with the element.
+ * Return: value of the hash.
  */
-
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int i;
+	unsigned long int k_index;
 	hash_node_t *tmp;
 
 	if (ht == NULL)
@@ -19,9 +18,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (key == NULL || *key == '\0')
 		return (NULL);
 
-	i = key_index((unsigned char *)key, ht->size);
+	k_index = key_index((unsigned char *)key, ht->size);
 
-	tmp = ht->array[i];
+	tmp = ht->array[k_index];
 
 	while (tmp != NULL)
 	{
