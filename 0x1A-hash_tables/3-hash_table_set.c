@@ -8,20 +8,20 @@
  * @key: The key of the new element
  * @value: The value of the new element
  *
- * Return: 1 on success, 0 otherwise
+ * Return: 1 on success, 0 on failure
  */
-
+int
 hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int i = 0;
+	unsigned long int index = 0;
 	hash_node_t *new_hash_node = NULL;
 	hash_node_t *tmp = NULL;
 
 	if (!ht || !key || !(*key) || !value)
 		return (0);
 
-	i = key_index((unsigned char *)key, ht->size);
-	tmp = ht->array[i];
+	index = key_index((unsigned char *)key, ht->size);
+	tmp = ht->array[index];
 
 	/* check if key exists */
 	while (tmp && strcmp(tmp->key, key) != 0)
@@ -44,8 +44,8 @@ hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_hash_node->key = strdup(key);
 	new_hash_node->value = strdup(value);
 
-	new_hash_node->next = ht->array[i];
-	ht->array[i] = new_hash_node;
+	new_hash_node->next = ht->array[index];
+	ht->array[index] = new_hash_node;
 
 	return (1);
 }
